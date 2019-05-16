@@ -1,0 +1,46 @@
+service: iot-control-services
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  stage: dev
+  region: eu-central-1
+  runtime: dotnetcore2.1
+  environment:
+    HUMIDITY_SERVICE_TABLE: "humidity_service_table_${self:provider.stage}"
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+      Resource: "*"
+
+functions:
+  HumidityUpdatedFunction:
+    handler: 'IoT.Control.Services::IoT.Control.Services.HumidityService.Handlers.HumidityUpdatedHandler::ExecuteAsync'
+    events:
+      - http:
+          path: humidity
+          method: post
+    memorySize: 512
+    package:
+      artifact: bin/release/netcoreapp2.1/publish/iot-control-services.zip
+
+resources:
+  Resources:
+    HumidityServiceTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: key
+            AttributeType: S
+        KeySchema:
+          - AttributeName: key
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.HUMIDITY_SERVICE_TABLE}
