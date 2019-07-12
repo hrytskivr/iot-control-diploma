@@ -10,7 +10,7 @@ In this repository you will find an example IoT control service that will let yo
 - Wirings, relays etc.
 
 ### How this will work (the high level diagram):
-![alt text](https://drive.google.com/uc?export=view&id=1m-KpzdrXUV4oVPQlxDD9rfBbZ3k2BmIC)
+![alt text](https://drive.google.com/uc?export=view&id=17-nzsFllhwsdFfn5Irn4zebPuSy7xxtd)
 
 ### Set-up instructions:
 1. Configure AWS credentials
