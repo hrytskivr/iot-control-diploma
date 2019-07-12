@@ -1,0 +1,8 @@
+{
+  "name": "iot-control-services",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "^2.461.0",
+    "serverless": "^1.43.0"
+  }
+}
