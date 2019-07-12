@@ -13,6 +13,8 @@ In this repository you will find an example IoT control service that will let yo
 ![diagram_link_broken-T_T](https://drive.google.com/uc?export=view&id=1Vai_HrPTf2PpHGNOuNkzIVZiK46icxn1)
 
 ### Set-up instructions:
+Disclaimer: this is not a step-by-step instruction, I assume you're familiar with most of the things.
+
 1. Configure AWS credentials
     - Given you already have AWS account, you now have to configure credentials on the machine that you will use for `serverless deploy` command
     - See this page for details -> https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
