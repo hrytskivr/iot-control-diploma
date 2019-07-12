@@ -32,7 +32,7 @@ Disclaimer: this is not a step-by-step instruction, I assume you're familiar wit
 4. Compose the hardware
     - You have to connect the DHT11 sensor to the controller
     - And the controller itself to the humidifier
-    - See schemes at [this folder](IoT.Control/IoT.Control.Services/HumidityService/Schemas/)
+    - See schemes at [this folder](IoT.Control/IoT.Control.Services/HumidityService/Schemes/)
 
 5. Configure controller firmware
     - Open [controller firmware file](IoT.Control/IoT.Control.Services/HumidityService/Firmware/HumidityControllerFirmware.ino) in the editor
